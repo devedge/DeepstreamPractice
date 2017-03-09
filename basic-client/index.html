@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<!-- Import the deepstream client package from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/deepstream.io-client-js/2.1.2/deepstream.js"></script>
+  </head>
+  <body>
+    <input type="text" />
+    <script type="text/javascript">
+        // Imports and initialization
+        var client = deepstream('localhost:6020').login();
+        var record = client.record.getRecord('some-name');
+
+        // Sync up the 'input' field
+        var input = document.querySelector('input');
+
+        input.onkeyup = (function() {
+            record.set('firstname', input.value); 
+        });
+
+        record.subscribe('firstname', function(value) { 
+            input.value = value; 
+        });
+    </script>
+  </body>
+</html>
