@@ -1,0 +1,14 @@
+{
+  "name": "deepstreamserver",
+  "version": "1.0.0",
+  "description": "Nodejs Deepstream Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "devedge",
+  "license": "MIT",
+  "dependencies": {
+    "deepstream.io": "^2.1.3"
+  }
+}
